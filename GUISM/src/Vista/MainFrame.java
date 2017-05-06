@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import java.awt.CardLayout;
 import javax.swing.JToggleButton;
 
 /**
@@ -50,6 +51,9 @@ public class MainFrame extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 480));
         setMinimumSize(new java.awt.Dimension(800, 480));
+        setPreferredSize(new java.awt.Dimension(800, 480));
+        setResizable(false);
+        setSize(new java.awt.Dimension(800, 480));
 
         maineHeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/Header.png"))); // NOI18N
 
@@ -97,18 +101,15 @@ public class MainFrame extends javax.swing.JFrame {
                         .addGroup(panelTimeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblDay)
                             .addComponent(btonClose))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(0, 0, 0)
                         .addComponent(lblDate)))
                 .addContainerGap())
         );
 
         panelMainCard.setPreferredSize(new java.awt.Dimension(400, 330));
         panelMainCard.setLayout(new java.awt.CardLayout());
-        panelMainCard.add(medidas1, "card2");
-
-        control1.setBackground(new java.awt.Color(255, 255, 255));
-        control1.setMinimumSize(new java.awt.Dimension(192, 100));
-        panelMainCard.add(control1, "card3");
+        panelMainCard.add(medidas1, "medidas");
+        panelMainCard.add(control1, "control");
 
         panelBotones.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -222,6 +223,8 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void togMedidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togMedidasActionPerformed
         setbtns(0);
+        CardLayout cl = (CardLayout)(panelMainCard.getLayout());
+        cl.show(panelMainCard, "medidas");
     }//GEN-LAST:event_togMedidasActionPerformed
 
     private void btonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btonCloseActionPerformed
@@ -230,10 +233,14 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void togRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togRegistrosActionPerformed
         setbtns(1);
+        CardLayout cl = (CardLayout)(panelMainCard.getLayout());
+        cl.show(panelMainCard, "registros");
     }//GEN-LAST:event_togRegistrosActionPerformed
 
     private void togControlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togControlActionPerformed
         setbtns(2);
+        CardLayout cl = (CardLayout)(panelMainCard.getLayout());
+        cl.show(panelMainCard, "control");
     }//GEN-LAST:event_togControlActionPerformed
 
     private void togEstimadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togEstimadoresActionPerformed
