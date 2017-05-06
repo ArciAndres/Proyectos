@@ -5,17 +5,21 @@
  */
 package Vista;
 
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author ANDRES ARCINIEGAS
  */
 public class MainFrame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MainFrame
-     */
+    public static int numbtns = 5;
+    public JToggleButton[] togset = new JToggleButton[numbtns];
+    
     public MainFrame() {
         initComponents();
+        customInitComponents();
+
     }
 
     /**
@@ -27,127 +31,163 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
+        maineHeader = new javax.swing.JLabel();
+        panelTime = new javax.swing.JPanel();
+        lblHour = new javax.swing.JLabel();
+        lblDay = new javax.swing.JLabel();
+        lblDate = new javax.swing.JLabel();
+        btonClose = new javax.swing.JButton();
+        panelMainCard = new javax.swing.JPanel();
+        medidas1 = new Vista.Medidas();
+        control1 = new Vista.Control();
+        panelBotones = new javax.swing.JPanel();
+        togMedidas = new javax.swing.JToggleButton();
+        togControl = new javax.swing.JToggleButton();
+        togEstimadores = new javax.swing.JToggleButton();
+        togSettings = new javax.swing.JToggleButton();
+        togRegistros = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(800, 480));
         setMinimumSize(new java.awt.Dimension(800, 480));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/Header.png"))); // NOI18N
+        maineHeader.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/Header.png"))); // NOI18N
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        panelTime.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
-        jLabel2.setText("13:45 ");
+        lblHour.setFont(new java.awt.Font("Segoe UI Light", 0, 36)); // NOI18N
+        lblHour.setText("13:45 ");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jLabel3.setText("Domingo");
+        lblDay.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        lblDay.setText("Domingo");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
-        jLabel4.setText("30 de Abril de 2017");
+        lblDate.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        lblDate.setText("30 de Abril de 2017");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        btonClose.setText("x");
+        btonClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btonCloseActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelTimeLayout = new javax.swing.GroupLayout(panelTime);
+        panelTime.setLayout(panelTimeLayout);
+        panelTimeLayout.setHorizontalGroup(
+            panelTimeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelTimeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addComponent(lblHour)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panelTimeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelTimeLayout.createSequentialGroup()
+                        .addComponent(lblDay)
+                        .addGap(30, 30, 30)
+                        .addComponent(btonClose, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblDate))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        panelTimeLayout.setVerticalGroup(
+            panelTimeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelTimeLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(0, 0, 0)
-                        .addComponent(jLabel4))))
+                .addGroup(panelTimeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblHour)
+                    .addGroup(panelTimeLayout.createSequentialGroup()
+                        .addGroup(panelTimeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblDay)
+                            .addComponent(btonClose))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblDate)))
+                .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 311, Short.MAX_VALUE)
-        );
+        panelMainCard.setPreferredSize(new java.awt.Dimension(400, 330));
+        panelMainCard.setLayout(new java.awt.CardLayout());
+        panelMainCard.add(medidas1, "card2");
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        control1.setBackground(new java.awt.Color(255, 255, 255));
+        control1.setMinimumSize(new java.awt.Dimension(192, 100));
+        panelMainCard.add(control1, "card3");
 
-        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-medidas-off.png"))); // NOI18N
-        jToggleButton2.setBorderPainted(false);
-        jToggleButton2.setContentAreaFilled(false);
-        jToggleButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-medidas-on.png"))); // NOI18N
+        panelBotones.setBackground(new java.awt.Color(255, 255, 255));
 
-        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-registros-off.png"))); // NOI18N
-        jToggleButton3.setBorderPainted(false);
-        jToggleButton3.setContentAreaFilled(false);
-        jToggleButton3.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-registros-on.png"))); // NOI18N
+        togMedidas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-medidas-off.png"))); // NOI18N
+        togMedidas.setBorderPainted(false);
+        togMedidas.setContentAreaFilled(false);
+        togMedidas.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-medidas-on.png"))); // NOI18N
+        togMedidas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                togMedidasActionPerformed(evt);
+            }
+        });
 
-        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-registros-off.png"))); // NOI18N
-        jToggleButton4.setBorderPainted(false);
-        jToggleButton4.setContentAreaFilled(false);
-        jToggleButton4.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-registros-on.png"))); // NOI18N
+        togControl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-control-off.png"))); // NOI18N
+        togControl.setBorderPainted(false);
+        togControl.setContentAreaFilled(false);
+        togControl.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-control-on.png"))); // NOI18N
+        togControl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                togControlActionPerformed(evt);
+            }
+        });
 
-        jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-settings.png"))); // NOI18N
-        jToggleButton5.setBorderPainted(false);
-        jToggleButton5.setContentAreaFilled(false);
-        jToggleButton5.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-registros-on.png"))); // NOI18N
+        togEstimadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-estimadores-off.png"))); // NOI18N
+        togEstimadores.setBorderPainted(false);
+        togEstimadores.setContentAreaFilled(false);
+        togEstimadores.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-estimadores-on.png"))); // NOI18N
+        togEstimadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                togEstimadoresActionPerformed(evt);
+            }
+        });
 
-        jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-registros-off.png"))); // NOI18N
-        jToggleButton6.setBorderPainted(false);
-        jToggleButton6.setContentAreaFilled(false);
-        jToggleButton6.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-registros-on.png"))); // NOI18N
+        togSettings.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-settings.png"))); // NOI18N
+        togSettings.setBorderPainted(false);
+        togSettings.setContentAreaFilled(false);
+        togSettings.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-settings-on.png"))); // NOI18N
+        togSettings.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                togSettingsActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        togRegistros.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-registros-off.png"))); // NOI18N
+        togRegistros.setBorderPainted(false);
+        togRegistros.setContentAreaFilled(false);
+        togRegistros.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/images/botones/btn-registros-on.png"))); // NOI18N
+        togRegistros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                togRegistrosActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelBotonesLayout = new javax.swing.GroupLayout(panelBotones);
+        panelBotones.setLayout(panelBotonesLayout);
+        panelBotonesLayout.setHorizontalGroup(
+            panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBotonesLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(togMedidas, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(togRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(togControl, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(togEstimadores, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(2, 2, 2)
-                .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, Short.MAX_VALUE)
+                .addComponent(togSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 69, Short.MAX_VALUE)
                 .addGap(4, 4, 4))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+        panelBotonesLayout.setVerticalGroup(
+            panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBotonesLayout.createSequentialGroup()
+                .addGroup(panelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(togMedidas, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(togRegistros, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(togControl, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(togEstimadores, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(togSettings, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -156,31 +196,53 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(panelTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(panelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(maineHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(panelMainCard, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(maineHeader)
+                .addGap(2, 2, 2)
+                .addComponent(panelMainCard, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0))
+                    .addComponent(panelBotones, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelTime, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void togMedidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togMedidasActionPerformed
+        setbtns(0);
+    }//GEN-LAST:event_togMedidasActionPerformed
+
+    private void btonCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btonCloseActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btonCloseActionPerformed
+
+    private void togRegistrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togRegistrosActionPerformed
+        setbtns(1);
+    }//GEN-LAST:event_togRegistrosActionPerformed
+
+    private void togControlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togControlActionPerformed
+        setbtns(2);
+    }//GEN-LAST:event_togControlActionPerformed
+
+    private void togEstimadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togEstimadoresActionPerformed
+        setbtns(3);
+    }//GEN-LAST:event_togEstimadoresActionPerformed
+
+    private void togSettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_togSettingsActionPerformed
+        setbtns(4);
+    }//GEN-LAST:event_togSettingsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -216,19 +278,38 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
     }
-
+    
+    private void customInitComponents() {
+        togset[0] = togMedidas;
+        togset[1] = togRegistros;
+        togset[2] = togControl;
+        togset[3] = togEstimadores;
+        togset[4] = togSettings;
+    }
+    
+    private void setbtns(int i) {
+        for (int j = 0; j < numbtns; j++) {
+            if (j != i) 
+                togset[j].setSelected(false);
+            else
+                togset[j].setSelected(true);            
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
+    private javax.swing.JButton btonClose;
+    private Vista.Control control1;
+    private javax.swing.JLabel lblDate;
+    private javax.swing.JLabel lblDay;
+    private javax.swing.JLabel lblHour;
+    private javax.swing.JLabel maineHeader;
+    private Vista.Medidas medidas1;
+    private javax.swing.JPanel panelBotones;
+    private javax.swing.JPanel panelMainCard;
+    private javax.swing.JPanel panelTime;
+    private javax.swing.JToggleButton togControl;
+    private javax.swing.JToggleButton togEstimadores;
+    private javax.swing.JToggleButton togMedidas;
+    private javax.swing.JToggleButton togRegistros;
+    private javax.swing.JToggleButton togSettings;
     // End of variables declaration//GEN-END:variables
 }
